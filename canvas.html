@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Hexagonal Canvas</title>
+<style>
+body{
+     margin:0;
+     padding:0;
+     min-height:160vh;
+     overflow-x:hidden;
+}
+.container{
+     background: #2b2b2b;
+     display:flex;
+     justify-content: center;
+     align-items: center;
+     min-height: 100vh;
+     position: relative;
+}
+#hex-grid{
+     height: 100vh;
+     background: #000;
+}
+#hex-grid .grid{
+     position: absolute;
+     top: 0;
+     left: 0;
+     background: url(https://svgshare.com/i/Tf8.svg)
+     repeat;
+     width: 100%;
+     height: 100%;
+     z-index: 0;
+     background-size: 500px;
+}
+#hex-grid .light{
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     width: 15em;
+     height: 15em;
+     filter: blur(15px);
+     background: linear-gradient(90deg, #335bf4 0%, #2ae9c9 100%);
+     z-index:0;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header id="hex-grid">
+<div class="light"></div>
+<div class="grid"></div>
+</header>
+</div>
+</body>
+<script>
+const light = document.querySelector(".light");
+const grid = document.querySelector("#hex-grid");
+
+grid.addEventListener("mouseover", function(e){
+light.style.left = `${e.clientX}px`;
+light.style.top = `${e.clientY}px`;
+});
+</script>
+</html>

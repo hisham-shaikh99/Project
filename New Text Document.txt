@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Hexagonal Canvas</title>
+
+</head>
+<body>
+
+</body>
+</html>
